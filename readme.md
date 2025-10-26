@@ -114,19 +114,18 @@ running PORT:
 http://localhost:3000
 
 📁 Project Structure
+```
 app/
 ├── http/
-│ ├── controllers/ # Route controllers
-│ │ ├── admin/ # Admin panel controllers
-│ │ ├── auth/ # Authentication controllers
-│ │ └── home/ # Main page controllers
-│ ├── middleware/ # Custom middleware
-│ └── validators/ # Input validation
-├── models/ # Mongoose models
-├── routes/ # Route definitions
-│ └── web/ # Web routes
-├── helpers/ # Utility functions
-└── views/ # EJS templates
+│   ├── controllers/
+│   ├── middleware/
+│   └── validators/
+├── models/
+├── routes/
+│   └── web/
+├── helpers/
+└── views/
+```
 
 🎯 API Routes
 Authentication Routes
