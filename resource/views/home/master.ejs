@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%- defineContent('title') || ' روان آسا سنتر'%></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-rtl.min.css" />
+    <link rel="stylesheet" href="/css/vazir.css"/>
+    <link rel="stylesheet" href="/css/home.css"/>
+
+    <!-- for footer (FONTAWESOME): -->
+    <link rel="stylesheet" href="/css/all.min.css"/>
+    <%- style %>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">روان آسا سنتر</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">صفحه اصلی</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/courses">دوره ها</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about-me">درباره ما</a>
+                </li>
+                <% if(auth.check){
+                if(user.admin){
+                %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">مدیریت</a>
+                    </li>
+                <%}}%>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"
+                style='display:flex;align-items:center;justify-content:space-evenly;width:380px'>
+            <% if(auth.check){ %>
+                <img src="<%= user.avatar %>"
+                     class="rounded-circle" style="border:solid white;width: 55px;height: 55px"
+                     alt="Avatar" />
+                    <li><span style="color:white">سلام <b><%= user.name %></b> </span></li>
+                    <li><a class="btn btn-success btn-sm ml-2" href="/user/panel">پنل کاربری</a></li>
+                    <li><a class="btn btn-danger btn-sm" href="/logout">خروج</a></li>
+            <%} else{ %>
+                    <li><a class="btn btn-success btn-sm ml-2" href="/auth/login">ورود</a></li>
+                    <li><a class="btn btn-primary btn-sm" href="/auth/register">عضویت</a></li>
+            <%  } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="container" style="background: #c2c7c7">
+    <%- body %>
+</div>
+
+<%- defineContent('footer') %>
+
+<!-- footersection: -->
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-facebook-f"></i
+                ></a>
+
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-twitter"></i
+                ></a>
+
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-google"></i
+                ></a>
+
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-instagram"></i
+                ></a>
+
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-linkedin-in"></i
+                ></a>
+
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-github"></i
+                ></a>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Form -->
+        <section class="">
+            <form action="">
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>جهت دریافت خبرنامه های سایت، ایمیل خود را وارد کنید</strong>
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-5 col-12">
+                        <!-- Email input -->
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" id="form5Example21" class="form-control" />
+                            <label class="form-label" for="form5Example21">آدرس ایمیل</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-outline-light mb-4">
+                            عضویت
+                        </button>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </form>
+        </section>
+        <!-- Section: Form -->
+
+        <!-- Section: Text -->
+        <section class="mb-4">
+            <p>
+               مرکز روان آسا سنتر ، با هدف دیرینه ی آسایش و سلامت روان فردی و اجتماعی، با شیوه های نوین روانشناسی مدرن، بالاترین استاندارد های به زیستی روانی را عرضه میدارد.
+            </p>
+        </section>
+        <!-- Section: Text -->
+
+        <!-- Section: Links -->
+        <section class="">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+<!--                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">-->
+<!--                    <h5 class="text-uppercase">Links</h5>-->
+
+<!--                    <ul class="list-unstyled mb-0">-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 1</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 2</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 3</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 4</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+                <!--Grid column-->
+
+                <!--Grid column-->
+<!--                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">-->
+<!--                    <h5 class="text-uppercase">Links</h5>-->
+
+<!--                    <ul class="list-unstyled mb-0">-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 1</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 2</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 3</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 4</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;Grid column&ndash;&gt;-->
+
+<!--                &lt;!&ndash;Grid column&ndash;&gt;-->
+<!--                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">-->
+<!--                    <h5 class="text-uppercase">Links</h5>-->
+
+<!--                    <ul class="list-unstyled mb-0">-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 1</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 2</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 3</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 4</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;Grid column&ndash;&gt;-->
+
+<!--                &lt;!&ndash;Grid column&ndash;&gt;-->
+<!--                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">-->
+<!--                    <h5 class="text-uppercase">Links</h5>-->
+
+<!--                    <ul class="list-unstyled mb-0">-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 1</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 2</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 3</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#!" class="text-white">Link 4</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<!-- scripts: -->
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<!-- for footer (FONTAWESOME): -->
+<script src="/js/all.min.js"></script>
+
+<script src="/js/sweetalert2.all.min.js"></script>
+<% let sweetalert = req.flash('sweetalert');
+    if(sweetalert.length){
+    let data = sweetalert[0];
+%>
+<script>
+Swal.fire({
+    title             : '<%= data.title %>',
+    text              : '<%= data.message %>',
+    icon              : '<%= data.type %>',
+    showConfirmButton  : <%= data.button !== null ? true : false %>,
+    confirmButtonText : '<%= data.button %>',
+    timer             : <%= data.button !== null ? 'null' : data.timer %>
+});
+</script>
+<%}%>
+<%- script %>
+</body>
+</html>
+
+

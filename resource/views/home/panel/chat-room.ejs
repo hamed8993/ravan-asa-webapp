@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSockets</title>
+    <style>
+
+       </style>
+</head>
+<body>
+<!-- Simple HTML page for sending messages with input box and send button-->
+    <h1>Hello WebSockets</h1>
+
+<img src="<%= chatBy_avatar %>"class="rounded-circle" style="border:solid white;width: 55px;height: 55px" alt="Avatar" />
+<span><%=chatBy_name %></span>
+
+    <p id="status"> آفلاین</p>
+    <span style="visibility:hidden;" class="typing"><%=chatBy_name %> در حال تایپ کردن...</span>
+    <div id="messages" style="display:flex;flex-direction:column;width:100%; border:solid #525456; margin-bottom:5px;">
+        <i></i>
+        <% chats.forEach((chat) =>{
+        if(chat.user == req.user.id){ %>
+                <div class="mine" style='width:60%;margin:5px 5px 5px 38%;border-radius:5px;background:#d9fdd3'>
+                    <p style="padding:10px; margin:3px 2px 25px 5px;"><%=chat.body%></p>
+                    <i style='margin-right:80%;'> <%= date(chat.createdAt).format('HH:MM - jD jMMMM ') %></i>
+                    <i class='checksContainer' style='color:#7aceef;'>
+                        <i class="fa fa-check"></i>
+                        <%if(chat.msgSeen == true){%>
+                        <i class="fa fa-check"></i>
+                        <%}%>
+                    </i>
+                </div>
+            <%}else{%>
+                <div class="guest" style='width:60%;margin:5px 38% 5px 5px;border-radius:5px;background:#ffffff'>
+                    <p style="padding:10px; margin:3px 2px 25px 5px;"><%=chat.body%></p>
+                    <i style='margin-right:85%;'> <%= date(chat.createdAt).format('HH:MM - jD jMMMM') %></i>
+                </div>
+             <% }
+        })%>
+
+
+    </div>
+    <input type="text" id="message">
+<input type="hidden" id="userID" value="<%=req.user.id %>">
+<input type="hidden" id="haveRoom" value="<%=haveRoom.id %>">
+<input type="hidden" id="chatBy_id" value="<%=chatBy_id %>">
+
+    <button onclick='generateDate()' id="send">Send Message</button>
+</body>
+</html>
+
+<script src="/js/ws.js"></script>
+<script>
+</script>

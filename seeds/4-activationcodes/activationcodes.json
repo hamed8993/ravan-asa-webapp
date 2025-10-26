@@ -1,0 +1,251 @@
+[{
+  "_id": {
+    "$oid": "62d6e181a2b8da20787342b1"
+  },
+  "used": true,
+  "user": {
+    "$oid": "62d6e158a2b8da20787342b0"
+  },
+  "code": "a42d84b3697550b842315cb29aa9322e",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658250201372"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658249601375"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658249661722"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d915b3f5c3e428186ee2e4"
+  },
+  "used": true,
+  "user": {
+    "$oid": "62d80af45a6bd71750dc7c3b"
+  },
+  "code": "e3cde4028bbd4c5799388c7a6e158a80",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658394635257"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658394035261"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658394095819"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d916b0f5c3e428186ee2e5"
+  },
+  "used": true,
+  "user": {
+    "$oid": "62d80ac15a6bd71750dc7c3a"
+  },
+  "code": "81442c4929aa857c7560c92eea4952ca",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658394888342"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658394288343"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658394337464"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d917e4f5c3e428186ee2e6"
+  },
+  "used": true,
+  "user": {
+    "$oid": "62d80f2bd0b2e91c24b62271"
+  },
+  "code": "769b76a3dfb6b5efd26b42379a967d5b",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658395196039"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658394596040"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658394667453"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d91906f5c3e428186ee2e7"
+  },
+  "used": true,
+  "user": {
+    "$oid": "62d80b91d902aa437cef1a16"
+  },
+  "code": "657648a5a8ce7879dedece86cc533028",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658395486675"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658394886678"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658394923752"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d9569a34488e4fac840b4e"
+  },
+  "used": true,
+  "user": {
+    "$oid": "62d955a839d97d4f6006c6f8"
+  },
+  "code": "b3be77a5b02f9683d4758e0190555eb0",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658411250693"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658410650694"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658410812518"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d962f070187a0fdc342331"
+  },
+  "used": false,
+  "user": {
+    "$oid": "62d95c5c3bdb124ef0720f59"
+  },
+  "code": "74be419e7cbce191186176368760d241",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658414408372"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658413808375"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658413808375"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d9656ea481b908c04be0dc"
+  },
+  "used": true,
+  "user": {
+    "$oid": "62d95c5c3bdb124ef0720f59"
+  },
+  "code": "a25b8ade7944c7e2eda02e1a3b1636dd",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658415046130"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658414446135"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658414482195"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dbb82fb82a4e0b3c3dd217"
+  },
+  "used": true,
+  "user": {
+    "$oid": "62dbb81db82a4e0b3c3dd216"
+  },
+  "code": "27559f195c6114de224442e19f0d7b4c",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658567303015"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658566703016"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658566745309"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dd48bb96362e127831311f"
+  },
+  "used": true,
+  "user": {
+    "$oid": "62dd489e96362e127831311e"
+  },
+  "code": "2de3ccce9cf6af81b036d8a92ac0137b",
+  "expire": {
+    "$date": {
+      "$numberLong": "1658669843213"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658669243215"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658669274166"
+    }
+  },
+  "__v": 0
+}]

@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-between align-items-center mb-3 border-bottom-1">
+    <h2>لیست سطوح دسترسی ها</h2>
+    <div class="btn-group">
+        <a href="/admin/users/roles/create" class="btn btn-sm btn-danger">افزودن سطح دسترسی جدید</a>
+        <a href="/admin/users/permissions" class="btn btn-sm btn-info">بخش اجازه ی دسترسی</a>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>عنوان سطح</th>
+            <th>توضیح</th>
+            <th>مجوزهای سطح</th>
+            <th>تنظیمات</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% roles.docs.forEach(role => { %>
+            <tr>
+                <td><a href="#"><%= role.name %></a></td>
+                <td><%= role.label %></td>
+                <td><% permissions.forEach(per =>{ %>
+                    <% if(role.permissions.indexOf(per.id) !==-1) { %>
+                        <p style="margin:0; padding:0"> <%=per.label %> </p>
+                   <%} }) %>
+                </td>
+                <td>
+                    <form action="/admin/users/roles/<%= role.id %>?_method=DELETE" method="post">
+                        <input type="hidden" name="_csrf" value="<%= req.csrfToken()%>">
+                        <div class="btn-group btn-group-sm">
+                            <a href="/admin/users/roles/<%= role.id %>/edit"  class="btn btn-primary">ویرایش</a>
+                            <button type="submit" class="btn btn-danger">حذف</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+    <%- include(viewPath('layouts/pagination'),{pagination: roles}) %>
+</div>
+

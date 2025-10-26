@@ -1,0 +1,52 @@
+<%- include(viewPath('home/panel/head.ejs')) -%>
+<div style="margin: 20px;">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>کاربر</th>
+            <th>ایمیل</th>
+            <th>نقش کاربر</th>
+            <th>پیام دادن</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% users.forEach(user => {
+
+            if(user.id !== req.user.id){ %>
+            <tr>
+                <td><img src="<%= user.avatar %>"class="rounded-circle" style="border:solid white;width: 55px;height: 55px"
+                                           alt="Avatar" /><%= (user.name) %></td>
+                <td><%= user.email %></td>
+                <td>
+                   <% if(user.roles.length == 0){
+                            if(user.admin == true) { %>
+                                <p>مدیر بدون نقش</p>
+                           <% } else { %>
+                                <p>کاربر عادی</p>
+                           <% }
+                 }else {  user.roles.forEach(role=>{ %>
+                    <p style="margin:0; padding:0"> <%= role.label %> </p>
+                  <% })
+                } %>
+                </td>
+                <td>
+                    <form action="/user/panel/chatroom?_method=post" method="post">
+                        <input type="hidden" name="_csrf" value="<%= req.csrfToken()%>">
+                        <input type="hidden" name="chatBy_id" value="<%= user.id %>" >
+                        <input type="hidden" name="chatBy_name" value="<%= user.name %>" >
+                        <input type="hidden" name="chatBy_avatar" value="<%= user.avatar %>" >
+
+                        <div class="btn-group btn-group-sm">
+<!--                               <a href="/admin/users/<%= user.id%>/addrole" class="btn btn-success"> پیام دادن </a>-->
+                               <input type="submit"
+                                   style="display:block" class="btn btn-danger delete-btn" value="پیام دادن">
+                        </div>
+                    </form>
+
+                </td>
+            </tr>
+        <%  }
+         }) %>
+        </tbody>
+    </table>
+</div>

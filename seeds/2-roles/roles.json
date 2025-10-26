@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "62d7b7ae44152307988391f2"
+  },
+  "permissions": [
+    {
+      "$oid": "62d7b49b44152307988391f0"
+    },
+    {
+      "$oid": "62d7f8c3e66f6211e418b8d7"
+    },
+    {
+      "$oid": "62d7f8dee66f6211e418b8d8"
+    }
+  ],
+  "name": "super-admin",
+  "label": "سوپر ادمین",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658304430263"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658322199622"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d7fc5fa83d963064ce4e14"
+  },
+  "permissions": [
+    {
+      "$oid": "62d7f8dee66f6211e418b8d8"
+    }
+  ],
+  "name": "site-manager",
+  "label": "مدیر سایت",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658322015836"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658322015836"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d7fccfa83d963064ce4e15"
+  },
+  "permissions": [
+    {
+      "$oid": "62d7b49b44152307988391f0"
+    }
+  ],
+  "name": "content-production",
+  "label": "تولید محتوا",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658322127185"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658322127185"
+    }
+  },
+  "__v": 0
+}]

@@ -1,0 +1,88 @@
+<div class="d-flex justify-content-between align-items-center mb-3 border-bottom-1">
+    <h2> کاربران سایت</h2>
+    <div class="btn-group">
+        <a href="/admin/users/roles" class="btn btn-sm btn-primary">
+            بخش سطح دسترسی</a>
+        <a href="/admin/users/create" class="btn btn-sm btn-danger mr-1">
+            ایجاد کاربر جدید</a>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>نام کاربر</th>
+            <th>ایمیل کاربر</th>
+            <th>سطح(های) دسترسی کاربر</th>
+            <th>تاریخ عضویت</th>
+            <th>تنظیمات</th>
+        </tr>
+        </thead>
+<tbody>
+<% users.docs.forEach(user => { %>
+    <tr>
+        <td><a href="#"><%= user.name %></a></td>
+    <td><a href="#"><%= user.email %></a></td>
+    <td>
+        <% if(user.admin == false){%>
+                  <p style="margin:0; padding:0"> کاربر عادی </p>
+        <%}else {
+                if(user.roles.length == 0){ %>
+                        <p style="margin:0; padding:0"> ادمین بدون سطح دسترسی </p>
+                <% } else{
+                        user.roles.forEach(userRoleId =>{
+                        allRoles.forEach(aRole=>{
+                                if(aRole.id.indexOf(userRoleId) !==-1) { %>
+                                <p style="margin:0; padding:0"> <%= aRole.label %> </p>
+                        <% }
+                        }) })
+                }
+        }%>
+    </td>
+    <td><%= date(user.createdAt).fromNow() %></td>
+                <td>
+                    <form action="/admin/users/<%= user.id %>?_method=DELETE" method="post">
+                        <input type="hidden" name="_csrf" value="<%= req.csrfToken()%>">
+                        <div class="btn-group btn-group-sm">
+                            <a href="/admin/users/<%= user.id%>/toggleadmin" class="btn btn-info">
+                               <%= user.admin ? 'لغو مدیریت' : 'مدیریت' %>
+                            </a>
+                            <% if(user.admin){ %>
+                                <a href="/admin/users/<%= user.id%>/addrole" class="btn btn-success"> اعمال سطح دسترسی </a>
+                            <% } %>
+                            <input onclick='user_delete("<%= user.id%>","<%= user.name%>")'
+                                   style="display:block" type="button" class="btn btn-danger delete-btn" value="حذف">
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+    <%- include(viewPath('layouts/pagination'),
+    {pagination: users}) %>
+</div>
+<script>
+function user_delete(ID,NAME){
+        Swal.fire({
+            title: `مطمئنید برا حذف کاربر  ${NAME} ؟  `,
+            text: 'با حذف این کاربر، تمام دوره ها و اپیزود ها و کل محتوای تولید شده توسط وی، حذف خواهد شد!',
+            showDenyButton: true,
+            color: 'white',
+            confirmButtonColor: '#d33',
+            denyButtonColor: '#3085d6',
+            confirmButtonText: 'بلی!',
+            denyButtonText: `حذف نکن`,
+            background : '#494e53'
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                    fetch(`/admin/users/${ID}?_method=delete&_csrf=<%= req.csrfToken()%>`,{
+                        method : "DELETE",
+                        }).then(res => window.location.href = "/admin/users")
+                        .catch(error => console.log('>>>',error));
+            } else if (result.isDenied) {
+            }
+        });
+}
+</script>

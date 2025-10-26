@@ -1,0 +1,30 @@
+<%- include(viewPath('home/panel/head.ejs')) -%>
+<div style="margin: 20px;">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>مقدار پرداخت</th>
+                <th>بابت</th>
+                <th>وضعیت پرداخت</th>
+                <th>تاریخ پرداخت</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% payments.docs.forEach(payment => { %>
+            <tr>
+                <td><%= payment.price %> تومان</td>
+                <td><%= payment.vip ?
+                   ' خریداری عضویت ویژه' : `خرید دوره ${payment.course.title}` %>
+                </td>
+                <td style="font-weight: bold; color:<%= payment.payment ? 'green' : 'red' %>">
+                    <%= payment.payment ? 'موفق' : 'ناموفق' %>
+                </td>
+                <td style="font-weight: bold; color:<%= payment.payment ? 'green' : 'red' %>">
+                    <%= date(payment.createdAt).format('jD jMMMM jYYYY') %>
+                </td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+    <%- include(viewPath('layouts/pagination') ,{ pagination : payments}) %>
+</div>

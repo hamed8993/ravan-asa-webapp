@@ -1,0 +1,12 @@
+<%- include(viewPath('home/panel/head.ejs')) -%>
+<div class="mt-4">
+    <form action="/user/panel/vip/payment" method='post' class="w-25">
+        <input type="hidden" name="_csrf" value="<%= req.csrfToken()%>">
+        <select name="plan" class="form-control">
+            <option value="1">عضویت ویژه 1 ماهه 10000</option>
+            <option value="3">عضویت ویژه 3 ماهه 30000</option>
+            <option value="12">عضویت ویژه 12 ماهه 120000</option>
+        </select>
+        <button type="submit" class="btn btn-danger mt-2">افزایش اعتبار</button>
+    </form>
+</div>

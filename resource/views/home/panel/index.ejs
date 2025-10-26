@@ -1,0 +1,29 @@
+<%- include(viewPath('home/panel/head.ejs')) -%>
+
+<ul style="margin: 20px">
+    <li><b>عکس پروفایل</b> :
+            <img src="<%= user.avatar %>"
+                 class="rounded-circle" style="border:solid white;width: 55px;height: 55px"
+                 alt="Avatar" />
+    </li>
+    <li><b>نام کاربری</b> :<%= auth.user.name %></li>
+    <li><b>ایمیل کاربری</b> : <%= auth.user.email %></li>
+    <% if(auth.user.isVip()){ %>
+    <li> <b>زمان پایان اعتبار ویژه</b>
+        : <%= date(auth.user.vipTime).fromNow() %> آینده </li>
+    <% }else {%>
+        <li> <b>زمان عضویت ویژه ی شما به پایان رسیده است.</b></li>
+    <% } %>
+</ul>
+
+<form class="form-horizontal" action="/user/panel/vip/<%=user._id%>/avatar?_method=put&_csrf=<%=req.csrfToken()%>"
+      method="post" enctype="multipart/form-data" >
+        <div class="form-group row mb-5">
+            <div class="col">
+                <label for="images" class="control-label font-weight-bold">تصویر برای آواتار:</label>
+                <input type="file" class="form-control" name="images" id="images" placeholder="تصویر آواتار کاربری خود را وارد کنید" >
+            </div>
+        </div>
+    <button type="submit" class="btn btn-warning">ارسال تصویر</button>
+</form>
+
