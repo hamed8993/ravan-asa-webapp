@@ -3,7 +3,16 @@
 ![Node.js](https://img.shields.io/badge/Node.js-v16.15.0-green)
 ![Express.js](https://img.shields.io/badge/Express.js-4.16.3-blue)
 ![MongoDB](https://img.shields.io/badge/MongoDB-5.0.16-green)
+![Mongoose](https://img.shields.io/badge/mongoose-5.0.16-green)
 ![License: ISC](https://img.shields.io/badge/License-ISC-blue)
+
+![JWT](https://img.shields.io/badge/JWT-8.3.0-red)
+![Passport](https://img.shields.io/badge/Passport-0.4.0-blue)
+![bcrypt](https://img.shields.io/badge/bcrypt-5.0.1-orange)
+
+![Multer](https://img.shields.io/badge/Multer-1.3.0-yellow)
+![Nodemailer](https://img.shields.io/badge/Nodemailer-6.7.7-lightgrey)
+![WebSocket](https://img.shields.io/badge/WebSocket-8.8.1-blue)
 
 A comprehensive psychology platform built with Express.js featuring user management, live chat, course system, and admin panel.
 
