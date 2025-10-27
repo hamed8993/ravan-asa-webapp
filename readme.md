@@ -1,18 +1,29 @@
 # 🧠 Ravan Asa - Professional Psychology Platform
+### 🧩 Backend
+![Node.js](https://img.shields.io/badge/Node.js-v16.15.0-339933?logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-4.16.3-000000?logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-5.0.16-47A248?logo=mongodb&logoColor=white)
+![Mongoose](https://img.shields.io/badge/Mongoose-5.0.16-880000?logo=mongoose&logoColor=white)
 
-![Node.js](https://img.shields.io/badge/Node.js-v16.15.0-green)
-![Express.js](https://img.shields.io/badge/Express.js-4.16.3-blue)
-![MongoDB](https://img.shields.io/badge/MongoDB-5.0.16-green)
-![Mongoose](https://img.shields.io/badge/mongoose-5.0.16-green)
-![License: ISC](https://img.shields.io/badge/License-ISC-blue)
 
-![JWT](https://img.shields.io/badge/JWT-8.3.0-red)
-![Passport](https://img.shields.io/badge/Passport-0.4.0-blue)
-![bcrypt](https://img.shields.io/badge/bcrypt-5.0.1-orange)
+### 🔐 Authentication & Security
+![JWT](https://img.shields.io/badge/JWT-8.3.0-000000?logo=jsonwebtokens&logoColor=white)
+![Passport](https://img.shields.io/badge/Passport-0.4.0-34E27A?logo=passport&logoColor=white)
+![bcrypt](https://img.shields.io/badge/bcrypt-5.0.1-E67E22?logo=lock&logoColor=white)
 
-![Multer](https://img.shields.io/badge/Multer-1.3.0-yellow)
-![Nodemailer](https://img.shields.io/badge/Nodemailer-6.7.7-lightgrey)
-![WebSocket](https://img.shields.io/badge/WebSocket-8.8.1-blue)
+### 📦 Utilities
+![Multer](https://img.shields.io/badge/Multer-1.3.0-FFCA28?logo=files&logoColor=black)
+![Nodemailer](https://img.shields.io/badge/Nodemailer-6.7.7-2C5BB4?logo=maildotru&logoColor=white)
+![WebSocket](https://img.shields.io/badge/WebSocket-8.8.1-4A90E2?logo=socketdotio&logoColor=white)
+
+
+### 🎨 View Engine
+![EJS](https://img.shields.io/badge/EJS-Templating-B4CA65?logo=ejs&logoColor=white)
+
+
+### ⚖️ License
+![License: ISC](https://img.shields.io/badge/License-ISC-007EC6?logo=open-source-initiative&logoColor=white)
+
 
 A comprehensive psychology platform built with Express.js featuring user management, live chat, course system, and admin panel.
 
